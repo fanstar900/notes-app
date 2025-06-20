@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import { Link, useNavigate } from "react-router-dom";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "./utils/axiosInstance";
 
 // Utility function to validate email format
 const validateEmail = (email) => {
@@ -155,7 +155,17 @@ const Signup = () => {
 
           <div className="text-center mt-3">
             <small>
-              Already have an account? <button onClick={navLogin} style={{border:"none" ,fontStyle:"italic", backgroundColor:"transparent"}}>Login</button>
+              Already have an account?{" "}
+              <button
+                onClick={navLogin}
+                style={{
+                  border: "none",
+                  fontStyle: "italic",
+                  backgroundColor: "transparent",
+                }}
+              >
+                Login
+              </button>
             </small>
           </div>
         </div>
