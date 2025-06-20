@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { IoMdAdd } from "react-icons/io";
-import Navbar from "../../components/Navbar/navbar";
-import NoteCard from "../../components/Cards/noteCard";
-import AddEditNotes from "./addEditNotes";
+import Navbar from "../../components/Navbar/Navbar";
+import NoteCard from "../../components/Cards/NoteCard";
+import AddEditNotes from "./AddEditNotes";
 import axios from "axios";
 import axiosInstance from "../../utils/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-import Toast from "../../components/ToastMessage/toast";
-import EmptyCard from "../../components/Cards/emptyCard";
+import Toast from "../../components/ToastMessage/Toast";
+import EmptyCard from "../../components/Cards/EmptyCard";
 const Home = () => {
   const [isSearch, setIsSearch] = useState(false);
 

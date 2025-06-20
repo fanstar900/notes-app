@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Navbar from "../../components/Navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 
