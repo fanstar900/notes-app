@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import SignUp from "./pages/SignUp/SignUp";
+import Signup from "./pages/SignUp/SignUp";
 import "./App.css";
 const routes = (
   <Router>
@@ -10,7 +10,7 @@ const routes = (
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Home />}></Route>
       <Route path="/login" element={<Login />}></Route>
-      <Route path="/signup" element={<SignUp />}></Route>
+      <Route path="/signup" element={<Signup />}></Route>
     </Routes>
   </Router>
 );
