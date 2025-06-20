@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
 import axiosInstance from "../../utils/axiosInstance";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -118,7 +118,7 @@ const Login = () => {
 
           <div className="text-center mt-3">
             <small>
-              Not yet registered? <a href="/signup">Sign Up</a>
+              Not yet registered? <Link to="/signup">Sign Up</Link>
             </small>
           </div>
         </div>
