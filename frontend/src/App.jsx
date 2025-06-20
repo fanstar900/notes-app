@@ -7,6 +7,7 @@ import "./App.css";
 const routes = (
   <Router>
     <Routes>
+      <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Home />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/signup" element={<SignUp />}></Route>
