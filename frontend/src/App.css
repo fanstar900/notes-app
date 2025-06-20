@@ -1,0 +1,357 @@
+/* Navbar container */
+.navbar {
+  background: linear-gradient(135deg, #6D5BFF 0%, #8F7BFF 100%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 0.5rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Brand */
+.navbar .navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.navbar .navbar-brand:hover {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+/* Container layout tweaks */
+.navbar .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Search bar */
+.navbar input.form-control {
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+.navbar input.form-control:focus {
+  box-shadow: inset 0 2px 12px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+/* Search button / clear icon */
+.navbar .input-group-text,
+.navbar .btn {
+  background: transparent;
+  border: none;
+  color: #555;
+}
+.navbar .input-group-text:hover,
+.navbar .btn:hover {
+  color: #fff;
+}
+
+/* ProfileInfo container */
+.navbar .profile-info {
+  margin-left: 1rem;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .navbar .d-flex.justify-content-center {
+    display: none; /* hide search on small */
+  }
+}
+/* Full‐page gradient background */
+.container.d-flex.justify-content-center.align-items-center {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh !important;
+}
+
+/* Card styling */
+.container.d-flex.justify-content-center.align-items-center .card {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+}
+
+/* Heading */
+.container .card h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs */
+.container .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  border-radius: 0;
+  padding: 0.5rem 0;
+  transition: border-color 0.2s ease;
+}
+.container .form-control:focus {
+  box-shadow: none;
+  border-bottom-color: #6d5bff;
+}
+
+/* Input group (password) */
+.container .input-group {
+  border-bottom: 2px solid #ddd;
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+.container .input-group:focus-within {
+  border-color: #6d5bff;
+}
+.container .input-group .btn {
+  color: #6d5bff;
+}
+
+/* Error text */
+.container p[style*="color:red"] {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Button */
+.container .btn-primary {
+  background: linear-gradient(135deg, #6d5bff 0%, #8f7bff 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.container .btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Link under form */
+.container .card small a {
+  color: #6d5bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.container .card small a:hover {
+  color: #5431ff;
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .container .card {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+/* Container for all notes */
+.d-flex.flex-wrap.justify-content-start {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  gap: 1rem; /* consistent spacing between cards */
+}
+
+/* Individual NoteCard wrapper (applies to any direct child cards) */
+.d-flex.flex-wrap.justify-content-start > .card {
+  /* ensure all cards line up
+     and have the same fixed width */
+  flex: 0 0 500px;
+  width: 500px;
+}
+
+/* EmptyCard overrides */
+.card.shadow-sm.text-center.d-flex {
+  border: 2px dashed #ccc;
+  background-color: #fafafa;
+}
+
+/* Floating Add button */
+.IoMdAdd {
+  transition: transform 0.2s ease;
+}
+.IoMdAdd:hover {
+  transform: scale(1.1);
+}
+
+/* Toast tweaks */
+.toast.show {
+  opacity: 0.95;
+  border-radius: 8px;
+}
+.toast-body {
+  font-weight: 500;
+}
+
+
+
+
+/* Modal Content Overrides */
+.ReactModal__Content {
+  border-radius: 12px !important;
+  padding: 0 !important;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.ReactModal__Content .p-3 {
+  padding: 1.5rem !important;
+}
+
+/* Modal Overlay Dim */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Header */
+.ReactModal__Content h4 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Labels */
+.ReactModal__Content .form-label {
+  color: #555;
+  font-weight: 500;
+}
+
+/* Inputs & Textarea */
+.ReactModal__Content .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  border-radius: 0;
+  padding: 0.5rem 0;
+  transition: border-color 0.2s ease;
+}
+.ReactModal__Content .form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom-color: #6d5bff;
+}
+
+/* Tag Add button */
+.ReactModal__Content .btn-outline-primary {
+  border: 2px solid #6d5bff;
+  background: transparent;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ReactModal__Content .btn-outline-primary:hover {
+  background: #6d5bff;
+  color: #fff;
+}
+
+/* Tags (badges) */
+.ReactModal__Content .badge.bg-primary {
+  background: #6d5bff !important;
+  border-radius: 12px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+}
+
+/* Close Icon */
+.ReactModal__Content svg { /* applies to IoMdClose */
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease;
+}
+.ReactModal__Content svg:hover {
+  color: #6d5bff;
+}
+
+/* Submit Button */
+.ReactModal__Content .btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #6d5bff 0%, #8f7bff 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.ReactModal__Content .btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+
+
+
+/* wrap Bootstrap’s input-group in a soft, translucent pill */
+.input-group {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+/* on hover/focus, bump contrast */
+.input-group:hover,
+.input-group:focus-within {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* the text input itself */
+.input-group .form-control {
+  border: none;
+  background: transparent;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* keep default input borders hidden */
+.input-group .form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* icon buttons */
+.input-group .btn {
+  border: none;
+  background: transparent;
+  color: #fff;
+  padding: 0 0.75rem;
+  transition: background 0.2s ease;
+}
+.input-group .btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* enlarge the SVG icons */
+.input-group .btn svg {
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: middle;
+}
+
+/* ensure the entire thing sits nicely in your navbar */
+.navbar .input-group {
+  max-width: 500px;
+  width: 100%;
+}
+
