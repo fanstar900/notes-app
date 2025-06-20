@@ -10,7 +10,7 @@ const validateEmail = (email) => {
   return regex.test(email);
 };
 
-const Signup = () => {
+const SignUp = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
@@ -160,4 +160,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
