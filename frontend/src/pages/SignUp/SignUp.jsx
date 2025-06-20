@@ -9,12 +9,12 @@ const validateEmail = (email) => {
   const regex = /^\S+@\S+\.\S+$/;
   return regex.test(email);
 };
-const navigate = useNavigate();
-const navLogin = ()=>{
-  navigate('/login')
-}
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const navLogin = () => {
+    navigate("/login");
+  };
 
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
@@ -155,7 +155,7 @@ const Signup = () => {
 
           <div className="text-center mt-3">
             <small>
-              Already have an account? <button onClick={navLogin}>Login</button>
+              Already have an account? <button onClick={navLogin} style={{border:"none" ,fontStyle:"italic", backgroundColor:"transparent"}}>Login</button>
             </small>
           </div>
         </div>

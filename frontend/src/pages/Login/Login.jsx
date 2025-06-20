@@ -121,7 +121,7 @@ const Login = () => {
 
           <div className="text-center mt-3">
             <small>
-              Not yet registered? <button onClick={navSignup}>Sign Up</button>
+              Not yet registered? <button onClick={navSignup} style={{border:"none" ,fontStyle:"italic", backgroundColor:"transparent"}}>Sign Up</button>
             </small>
           </div>
         </div>
