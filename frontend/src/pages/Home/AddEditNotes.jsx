@@ -3,7 +3,13 @@ import { FaPlus, FaTimes } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import axiosInstance from "../../utils/axiosInstance";
 
-const AddEditNotes = ({ noteData, type, onClose, getAllNotes, showToastMessage }) => {
+const AddEditNotes = ({
+  noteData,
+  type,
+  onClose,
+  getAllNotes,
+  showToastMessage,
+}) => {
   const [title, setTitle] = useState(noteData ? noteData.title : "");
   const [content, setContent] = useState(noteData ? noteData.content : "");
   const [tagInput, setTagInput] = useState("");
@@ -63,7 +69,7 @@ const AddEditNotes = ({ noteData, type, onClose, getAllNotes, showToastMessage }
     }
   };
 
-  const handleSubmit = async() => {
+  const handleSubmit = async () => {
     // title or content not filled
     if (!title) {
       setError("Please enter a title");
@@ -86,7 +92,9 @@ const AddEditNotes = ({ noteData, type, onClose, getAllNotes, showToastMessage }
   return (
     <div className="p-3">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h4 className="mb-3">{type == "add" ? "Add a New Note" : "Edit Note"}</h4>
+        <h4 className="mb-3">
+          {type == "add" ? "Add a New Note" : "Edit Note"}
+        </h4>
         <IoMdClose
           onClick={onClose}
           style={{
@@ -161,7 +169,7 @@ const AddEditNotes = ({ noteData, type, onClose, getAllNotes, showToastMessage }
       {error && <p style={{ color: "red", marginBottom: "5px" }}>{error}</p>}
       {/* Submit Button */}
       <button className="btn btn-primary w-100 mt-4" onClick={handleSubmit}>
-        {type=="add" ? "Add Note" : "Update Note"}
+        {type == "add" ? "Add Note" : "Update Note"}
       </button>
     </div>
   );
