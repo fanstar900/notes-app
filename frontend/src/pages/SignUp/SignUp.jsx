@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ const validateEmail = (email) => {
   return regex.test(email);
 };
 
-const SignUp = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
@@ -160,4 +160,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
