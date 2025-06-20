@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { IoMdAdd } from "react-icons/io";
-import Navbar from "../../components/Navbar/Navbar";
-import NoteCard from "../../components/Cards/NoteCard";
-import AddEditNotes from "./AddEditNotes";
+import Navbar from "../../components/Navbar/navbar";
+import NoteCard from "../../components/Cards/noteCard";
+import AddEditNotes from "./addEditNotes";
 import axios from "axios";
 import axiosInstance from "../../utils/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-import Toast from "../../components/ToastMessage/Toast";
-import EmptyCard from "../../components/Cards/EmptyCard";
+import Toast from "../../components/ToastMessage/toast";
+import EmptyCard from "../../components/Cards/emptyCard";
 const Home = () => {
   const [isSearch, setIsSearch] = useState(false);
 
@@ -29,24 +29,24 @@ const Home = () => {
     }
   };
 
-  const onSearchNote = async(query)=>{
-    try{
+  const onSearchNote = async (query) => {
+    try {
       const response = await axiosInstance.post("/search-notes", {
         query: query,
       });
-      if(response.data && response.data.notes) {
+      if (response.data && response.data.notes) {
         setIsSearch(true);
         setAllNotes(response.data.notes);
-      }                 
-    }catch(error){
+      }
+    } catch (error) {
       console.log("An unexpected error occurred while searching notes", error);
       showToastMessage("Failed to search notes", "error");
     }
-  }
+  };
   const onClearSearch = () => {
     setIsSearch(false);
     getAllNotes();
-  }
+  };
 
   const onPinNote = async (note) => {
     try {
@@ -121,28 +121,31 @@ const Home = () => {
 
   return (
     <>
-      <Navbar userInfo={userInfo} onSearchNote={onSearchNote} onClearSearch={onClearSearch}/>
+      <Navbar
+        userInfo={userInfo}
+        onSearchNote={onSearchNote}
+        onClearSearch={onClearSearch}
+      />
       <div className="d-flex flex-wrap justify-content-start">
-      {allNotes.length > 0 ? allNotes.map((note) => {
-        return (
-            
-            <NoteCard
-              key={note._id}
-              title={note.title}
-              date={moment(note.createdAt).format("DD MMM YYYY")}
-              content={note.content}
-              tags={note.tags}
-              isPinned={note.isPinned}
-              onEdit={() => onEdit(note)}
-              onDelete={() => onDelete(note)}
-              onPinNote={() => onPinNote(note)}
-            />
-          
-        );
-        
-      }
-      
-      ) : <EmptyCard setOpenAddEditModal={setOpenAddEditModal}/>}
+        {allNotes.length > 0 ? (
+          allNotes.map((note) => {
+            return (
+              <NoteCard
+                key={note._id}
+                title={note.title}
+                date={moment(note.createdAt).format("DD MMM YYYY")}
+                content={note.content}
+                tags={note.tags}
+                isPinned={note.isPinned}
+                onEdit={() => onEdit(note)}
+                onDelete={() => onDelete(note)}
+                onPinNote={() => onPinNote(note)}
+              />
+            );
+          })
+        ) : (
+          <EmptyCard setOpenAddEditModal={setOpenAddEditModal} />
+        )}
       </div>
       {!openAddEditModal.isShown && (
         <IoMdAdd

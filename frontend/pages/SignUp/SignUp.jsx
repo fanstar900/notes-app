@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/navbar";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
-
 
 // Utility function to validate email format
 const validateEmail = (email) => {
@@ -49,7 +48,7 @@ const Signup = () => {
         email: email,
         password: password,
       });
-      if(response.data && response.data.error){
+      if (response.data && response.data.error) {
         setError(response.data.message);
         return;
       }
@@ -69,20 +68,27 @@ const Signup = () => {
       } else {
         setError("An error occurred while Signing Up. Please try again.");
       }
-    }   
-
+    }
   };
 
   return (
     <>
       <Navbar />
-      <div className="container d-flex justify-content-center align-items-center min-vh-100" style={{ marginTop: "-60px" }}>
-        <div className="card p-4 shadow" style={{ width: "100%", maxWidth: "400px" }}>
+      <div
+        className="container d-flex justify-content-center align-items-center min-vh-100"
+        style={{ marginTop: "-60px" }}
+      >
+        <div
+          className="card p-4 shadow"
+          style={{ width: "100%", maxWidth: "400px" }}
+        >
           <h3 className="text-center mb-3">Sign Up</h3>
           <form onSubmit={handleSignUp}>
             <div className="row mb-3">
               <div className="col">
-                <label htmlFor="firstName" className="form-label">Name</label>
+                <label htmlFor="firstName" className="form-label">
+                  Name
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -95,7 +101,9 @@ const Signup = () => {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">Email address</label>
+              <label htmlFor="email" className="form-label">
+                Email address
+              </label>
               <input
                 type="text"
                 className="form-control"
@@ -107,8 +115,13 @@ const Signup = () => {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="password" className="form-label">Password</label>
-              <div className="input-group" style={{ border: "1px solid #ddd", borderRadius: "6px" }}>
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <div
+                className="input-group"
+                style={{ border: "1px solid #ddd", borderRadius: "6px" }}
+              >
                 <input
                   type={showPassword ? "text" : "password"}
                   className="form-control"
@@ -117,19 +130,29 @@ const Signup = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   style={{ border: "none" }}
                 />
-                <button type="button" onClick={togglePassword} style={{ border: "none", backgroundColor: "transparent", padding: "0 0.75rem" }}>
+                <button
+                  type="button"
+                  onClick={togglePassword}
+                  style={{
+                    border: "none",
+                    backgroundColor: "transparent",
+                    padding: "0 0.75rem",
+                  }}
+                >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
             </div>
-            {
-              <p style={{color:"red"}}>{error}</p>
-            }
-            <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+            {<p style={{ color: "red" }}>{error}</p>}
+            <button type="submit" className="btn btn-primary w-100">
+              Sign Up
+            </button>
           </form>
 
           <div className="text-center mt-3">
-            <small>Already have an account? <a href="/login">Login</a></small>
+            <small>
+              Already have an account? <a href="/login">Login</a>
+            </small>
           </div>
         </div>
       </div>
