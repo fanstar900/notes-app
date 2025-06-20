@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
 import axiosInstance from "../../utils/axiosInstance";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -13,6 +13,9 @@ const Login = () => {
     setShowPassword((prev) => !prev);
   };
   const navigate = useNavigate();
+  const navSignup = ()=>{
+  navigate('/signup')
+}
 
   // Utility function to validate email format
   const validateEmail = (email) => {
@@ -118,7 +121,7 @@ const Login = () => {
 
           <div className="text-center mt-3">
             <small>
-              Not yet registered? <a href="/signup">Sign Up</a>
+              Not yet registered? <button onClick={navSignup}>Sign Up</button>
             </small>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 
 // Utility function to validate email format
@@ -9,9 +9,13 @@ const validateEmail = (email) => {
   const regex = /^\S+@\S+\.\S+$/;
   return regex.test(email);
 };
+const navigate = useNavigate();
+const navLogin = ()=>{
+  navigate('/login')
+}
 
 const Signup = () => {
-  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -151,7 +155,7 @@ const Signup = () => {
 
           <div className="text-center mt-3">
             <small>
-              Already have an account? <a href="/login">Login</a>
+              Already have an account? <button onClick={navLogin}>Login</button>
             </small>
           </div>
         </div>
@@ -160,4 +164,4 @@ const Signup = () => {
   );
 };
 
-export default Signp;
+export default Signup;
