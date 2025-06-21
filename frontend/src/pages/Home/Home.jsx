@@ -95,7 +95,8 @@ const Home = () => {
         setUserInfo(response.data.user);
       }
     } catch (error) {
-      if (error.response.status === 401) {
+      console.error("Error fetching user info:", error);
+      if (error.response?.status === 401) {
         localStorage.clear();
         navigate("/login");
       }
@@ -109,7 +110,7 @@ const Home = () => {
         setAllNotes(response.data.notes);
       }
     } catch (error) {
-      console.log("An unexpected error occurred while fetching notes", error);
+      console.error("An unexpected error occurred while fetching notes:", error);
     }
   };
 
