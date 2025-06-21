@@ -126,26 +126,29 @@ const Home = () => {
         onSearchNote={onSearchNote}
         onClearSearch={onClearSearch}
       />
-      <div className="d-flex flex-wrap justify-content-start">
-        {allNotes.length > 0 ? (
-          allNotes.map((note) => {
-            return (
-              <NoteCard
-                key={note._id}
-                title={note.title}
-                date={moment(note.createdAt).format("DD MMM YYYY")}
-                content={note.content}
-                tags={note.tags}
-                isPinned={note.isPinned}
-                onEdit={() => onEdit(note)}
-                onDelete={() => onDelete(note)}
-                onPinNote={() => onPinNote(note)}
-              />
-            );
-          })
-        ) : (
-          <EmptyCard setOpenAddEditModal={setOpenAddEditModal} />
-        )}
+      <div className="container mt-4">
+        <div className="row">
+          {allNotes.length > 0 ? (
+            allNotes.map((note) => (
+              <div key={note._id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <NoteCard
+                  title={note.title}
+                  date={moment(note.createdAt).format("DD MMM YYYY")}
+                  content={note.content}
+                  tags={note.tags}
+                  isPinned={note.isPinned}
+                  onEdit={() => onEdit(note)}
+                  onDelete={() => onDelete(note)}
+                  onPinNote={() => onPinNote(note)}
+                />
+              </div>
+            ))
+          ) : (
+            <div className="col-12">
+              <EmptyCard setOpenAddEditModal={setOpenAddEditModal} />
+            </div>
+          )}
+        </div>
       </div>
       {!openAddEditModal.isShown && (
         <IoMdAdd
@@ -171,7 +174,8 @@ const Home = () => {
         onRequestClose={() => {}}
         style={{
           overlay: {
-            backgroundColor: "rgba(0 , 0 , 0 , 0.2)",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            zIndex: 1050,
           },
           content: {
             top: "50%",
@@ -180,7 +184,8 @@ const Home = () => {
             bottom: "auto",
             marginRight: "-50%",
             transform: "translate(-50%, -50%)",
-            width: "500px",
+            width: "90vw",
+            maxWidth: "500px",
             padding: "20px",
             borderRadius: "8px",
           },

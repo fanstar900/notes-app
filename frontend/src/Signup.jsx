@@ -76,11 +76,10 @@ const Signup = () => {
   };
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <Navbar />
       <div
-        className="container d-flex justify-content-center align-items-center min-vh-100"
-        style={{ marginTop: "-60px" }}
+        className="container d-flex justify-content-center align-items-center flex-grow-1"
       >
         <div
           className="card p-4 shadow"
@@ -170,7 +169,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

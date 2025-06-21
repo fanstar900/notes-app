@@ -7,6 +7,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  background-color: lightblue;
+  min-height: 70px;
 }
 
 /* Brand */
@@ -193,8 +195,28 @@
   font-weight: 500;
 }
 
+/* Responsive Navbar Title */
+.app-title {
+  font-size: 2.5rem; /* Default size */
+}
 
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+}
 
+@media (max-width: 576px) {
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .app-title {
+    font-size: 1.25rem;
+  }
+}
 
 /* Modal Content Overrides */
 .ReactModal__Content {
@@ -295,63 +317,55 @@
   filter: brightness(1.1);
 }
 
-
-
-
-/* wrap Bootstrap’s input-group in a soft, translucent pill */
-.input-group {
+/* Scoped Input Group styles for the Navbar */
+.navbar .input-group {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   overflow: hidden;
   transition: background 0.2s ease;
+  max-width: 500px;
+  width: 100%;
 }
 
 /* on hover/focus, bump contrast */
-.input-group:hover,
-.input-group:focus-within {
+.navbar .input-group:hover,
+.navbar .input-group:focus-within {
   background: rgba(255, 255, 255, 0.25);
 }
 
 /* the text input itself */
-.input-group .form-control {
+.navbar .input-group .form-control {
   border: none;
   background: transparent;
   color: #fff;
   padding: 0.5rem 1rem;
   font-size: 1rem;
 }
-.input-group .form-control::placeholder {
+.navbar .input-group .form-control::placeholder {
   color: rgba(255, 255, 255, 0.75);
 }
 
 /* keep default input borders hidden */
-.input-group .form-control:focus {
+.navbar .input-group .form-control:focus {
   box-shadow: none;
   outline: none;
 }
 
 /* icon buttons */
-.input-group .btn {
+.navbar .input-group .btn {
   border: none;
   background: transparent;
   color: #fff;
   padding: 0 0.75rem;
   transition: background 0.2s ease;
 }
-.input-group .btn:hover {
+.navbar .input-group .btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
 /* enlarge the SVG icons */
-.input-group .btn svg {
+.navbar .input-group .btn svg {
   width: 1.25em;
   height: 1.25em;
   vertical-align: middle;
 }
-
-/* ensure the entire thing sits nicely in your navbar */
-.navbar .input-group {
-  max-width: 500px;
-  width: 100%;
-}
-

@@ -14,9 +14,25 @@ const jwt = require("jsonwebtoken");
 const { authenticateToken } = require("./utilities");
 
 app.use(express.json());
+
+// Enhanced CORS for localStorage/Header-based auth
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:4173',
+  'https://notes-app-frontend-6c0n.onrender.com', // Your Render frontend URL
+];
+
 app.use(
   cors({
-    origin: "*",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
   })
 );
 
