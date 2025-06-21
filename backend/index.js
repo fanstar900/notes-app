@@ -20,7 +20,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
   'http://localhost:4173',
-  'https://notes-app-frontend-6c0n.onrender.com', // Your Render frontend URL
+  'https://notes-app-frontend-whi1.onrender.com', // Your new Render frontend URL
 ];
 
 app.use(
